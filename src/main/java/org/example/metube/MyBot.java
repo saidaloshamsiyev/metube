@@ -18,7 +18,7 @@ public class MyBot extends TelegramLongPollingBot {
     }
 
     ExecutorService executorService = Executors.newFixedThreadPool(50);
-
+/*s*/
 
     @SneakyThrows
     @Override
