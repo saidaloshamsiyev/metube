@@ -10,18 +10,13 @@ import software.amazon.awssdk.services.s3.S3Client;
 
 @Configuration
 public class S3Config {
-    @Value("${aws.secret-access-key}")
-    private String secretKey;
-
-
-    @Value("${aws.access-key-id}")
-    private String accessKeyId;
-
 
 
     @Bean
     public AwsCredentials awsCredentials(){
-        return AwsBasicCredentials.create(accessKeyId,secretKey);
+        String secretKey = "gbvSTbUULPiKIoJrFEA3HroCDLM179N/C/WJPhTq";
+        String accessKeyId = "AKIA6GBMGGFRCYJEPOLK";
+        return AwsBasicCredentials.create(accessKeyId, secretKey);
     }
 
     @Bean

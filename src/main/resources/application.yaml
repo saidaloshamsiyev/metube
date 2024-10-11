@@ -3,8 +3,6 @@ spring:
     name: MetubeBot
 
 aws:
-  access-key-id: AKIA6GBMGGFRCYJEPOLK
-  secret-access-key: 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
   bucket:
     name: metube-bucket
 
