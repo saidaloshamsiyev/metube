@@ -4,6 +4,7 @@ package org.example.metube;
 import lombok.SneakyThrows;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
@@ -11,6 +12,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
+@Component
 public class MyBot extends TelegramLongPollingBot {
 
     @Autowired
