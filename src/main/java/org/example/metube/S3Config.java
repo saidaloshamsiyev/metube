@@ -11,7 +11,7 @@ import software.amazon.awssdk.services.s3.S3Client;
 @Configuration
 public class S3Config {
 
-
+/*we*/
     @Bean
     public AwsCredentials awsCredentials(){
         String secretKey = "gbvSTbUULPiKIoJrFEA3HroCDLM179N/C/WJPhTq";
