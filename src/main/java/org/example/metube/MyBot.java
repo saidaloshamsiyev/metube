@@ -3,6 +3,7 @@ package org.example.metube;
 
 import lombok.SneakyThrows;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
@@ -12,7 +13,8 @@ import java.util.concurrent.Executors;
 
 public class MyBot extends TelegramLongPollingBot {
 
-    public static YouTubeDownloaderBot bot =new YouTubeDownloaderBot();
+    @Autowired
+    public  YouTubeDownloaderBot bot ;
     public MyBot() {
         super("7716409596:AAFzFhIbMs_8JFpRNMXuHQL5OFg6ZQBN0Hs");
     }

@@ -17,15 +17,23 @@ public class YouTubeDownloaderBot extends MyBot {
 
     public void onUpdate(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
-            String videoUrl = update.getMessage().getText();
+            String messageText = update.getMessage().getText();
+            Long chatId = update.getMessage().getChatId();
+
+            if (messageText.equals("/start")) {
+                sendMessage(chatId, "Salom! Yuklamoqchi bo'lgan videoni URL-ni kiriting.");
+                return;
+            }
+
             try {
-                String uploadedUrl = s3Uploader.uploadVideoToS3(videoUrl);
-                sendMessage(update.getMessage().getChatId(), "Video yuklandi: " + uploadedUrl);
+                String uploadedUrl = s3Uploader.uploadVideoToS3(messageText);
+                sendMessage(chatId, "Video yuklandi: " + uploadedUrl);
             } catch (Exception e) {
-                sendMessage(update.getMessage().getChatId(), "Xato: " + e.getMessage());
+                sendMessage(chatId, "Xato: " + e.getMessage());
             }
         }
     }
+
 
     private void sendMessage(Long chatId, String text) {
         try {
